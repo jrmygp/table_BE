@@ -20,6 +20,7 @@ const Review = require("../models/review")(sequelize);
 const Status = require("../models/status")(sequelize);
 const Table = require("../models/table")(sequelize);
 const Voucher = require("../models/table")(sequelize);
+const User = require("../models/user")(sequelize);
 
 // RELATION
 Cart.belongsTo(Table, { foreignKey: "table_id" });
@@ -50,6 +51,7 @@ Order.belongsTo(Table);
 Table.hasMany(Order);
 
 module.exports = {
+  User,
   Cart,
   Category,
   Order,
@@ -59,5 +61,5 @@ module.exports = {
   Status,
   Table,
   Voucher,
-  sequelize
+  sequelize,
 };
